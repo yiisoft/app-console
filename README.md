@@ -63,6 +63,41 @@ final class Hello extends Command
 }
 ```
 
+### Using command console
+
+```shell
+./yii
+```
+
+```shell
+$ ./yii
+Yii Console 1.0
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help            Display help for the given command. When no command is given display help for the list command
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi|--no-ansi  Force (or disable --no-ansi) ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --config=CONFIG   Set alternative configuration name
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands:
+  completion  Dump the shell completion script
+  hello       An example command
+  help        Display help for a command
+  list        List commands
+  serve       Runs PHP built-in web server
+```
+
+```shell
+$ ./yii hello
+Hello!
+```
+
 ## Testing
 
 ### Unit testing
