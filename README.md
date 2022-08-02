@@ -66,10 +66,6 @@ final class Hello extends Command
 ### Using command console
 
 ```shell
-./yii
-```
-
-```shell
 $ ./yii
 Yii Console 1.0
 
