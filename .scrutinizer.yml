@@ -34,5 +34,5 @@ build:
           - command: vendor/bin/codecept run --coverage-xml
             on_node: 1
             coverage:
-              file: tests/_output/coverage.xml
+              file: runtime/tests/_output/coverage.xml
               format: php-clover
