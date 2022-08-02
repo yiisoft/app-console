@@ -9,8 +9,11 @@ build:
   image: default-bionic
 
   environment:
+    variables:
+      YII_ENV: test
+
     php:
-      version: 8.0.18
+      version: 8.0.21
       ini:
         xdebug.mode: coverage
 
@@ -20,7 +23,7 @@ build:
         override:
           - php-scrutinizer-run
 
-    phpunit:
+    codeception:
       dependencies:
         override:
           - composer self-update
@@ -28,8 +31,10 @@ build:
 
       tests:
         override:
-          - command: ./vendor/bin/phpunit --coverage-clover ./coverage.xml
+          - command: |
+              ./yii serve 127.0.0.1:8080 > ./runtime/yii.log 2>&1 &
+              vendor/bin/codecept run --coverage-xml
             on_node: 1
             coverage:
-              file: coverage.xml
+              file: runtime/tests/_output/coverage.xml
               format: php-clover

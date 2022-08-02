@@ -2,52 +2,107 @@
     <a href="https://github.com/yiisoft" target="_blank">
         <img src="https://yiisoft.github.io/docs/images/yii_logo.svg" height="100px">
     </a>
-    <h1 align="center">Yii _____</h1>
+    <h1 align="center">Yii app console</h1>
     <br>
 </p>
 
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/_____/v/stable.png)](https://packagist.org/packages/yiisoft/_____)
-[![Total Downloads](https://poser.pugx.org/yiisoft/_____/downloads.png)](https://packagist.org/packages/yiisoft/_____)
-[![Build status](https://github.com/yiisoft/_____/workflows/build/badge.svg)](https://github.com/yiisoft/_____/actions?query=workflow%3Abuild)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiisoft/_____/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiisoft/_____/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/yiisoft/_____/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yiisoft/_____/?branch=master)
-[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2Fyiisoft%2F_____%2Fmaster)](https://dashboard.stryker-mutator.io/reports/github.com/yiisoft/_____/master)
-[![static analysis](https://github.com/yiisoft/_____/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/_____/actions?query=workflow%3A%22static+analysis%22)
-[![type-coverage](https://shepherd.dev/github/yiisoft/_____/coverage.svg)](https://shepherd.dev/github/yiisoft/_____)
+[![Latest Stable Version](https://poser.pugx.org/yiisoft/app-console/v/stable.png)](https://packagist.org/packages/yiisoft/app-console)
+[![Total Downloads](https://poser.pugx.org/yiisoft/app-console/downloads.png)](https://packagist.org/packages/yiisoft/app-console)
+[![Build status](https://github.com/yiisoft/app-console/workflows/build/badge.svg)](https://github.com/yiisoft/app-console/actions?query=workflow%3Abuild)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiisoft/app-console/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiisoft/app-console/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/yiisoft/app-console/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yiisoft/app-console/?branch=master)
+[![static analysis](https://github.com/yiisoft/app-console/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/app-console/actions?query=workflow%3A%22static+analysis%22)
+[![type-coverage](https://shepherd.dev/github/yiisoft/app-console/coverage.svg)](https://shepherd.dev/github/yiisoft/app-console)
 
-The package ...
+The package is a console application that can be used to perform common tasks in a Yii application.
 
 ## Requirements
 
-- PHP 7.4 or higher.
+- PHP 8.0 or higher.
 
 ## Installation
 
 The package could be installed with composer:
 
 ```shell
-composer require yiisoft/_____ --prefer-dist
+composer require yiisoft/app-console --prefer-dist
 ```
 
 ## General usage
+
+### Create command console
+
+```php
+<?php
+
+declare(strict_types=1);
+
+namespace App\Console;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+use Yiisoft\Yii\Console\ExitCode;
+
+final class Hello extends Command
+{
+    protected static $defaultName = 'hello';
+    protected static $defaultDescription = 'An example command';
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $output->writeln('Hello!');
+
+        return ExitCode::OK;
+    }
+}
+```
+
+### Using command console
+
+```shell
+$ ./yii
+Yii Console 1.0
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help            Display help for the given command. When no command is given display help for the list command
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi|--no-ansi  Force (or disable --no-ansi) ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --config=CONFIG   Set alternative configuration name
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands:
+  completion  Dump the shell completion script
+  hello       An example command
+  help        Display help for a command
+  list        List commands
+  serve       Runs PHP built-in web server
+```
+
+```shell
+$ ./yii hello
+Hello!
+```
 
 ## Testing
 
 ### Unit testing
 
-The package is tested with [PHPUnit](https://phpunit.de/). To run tests:
+The template comes with ready to use [Codeception](https://codeception.com/) configuration.
+In order to execute tests run:
 
-```shell
-./vendor/bin/phpunit
 ```
-
-### Mutation testing
-
-The package tests are checked with [Infection](https://infection.github.io/) mutation framework with
-[Infection Static Analysis Plugin](https://github.com/Roave/infection-static-analysis-plugin). To run it:
-
-```shell
-./vendor/bin/roave-infection-static-analysis-plugin
+vendor/bin/codecept run
 ```
 
 ### Static analysis
@@ -60,7 +115,7 @@ The code is statically analyzed with [Psalm](https://psalm.dev/). To run static 
 
 ## License
 
-The Yii _____ is free software. It is released under the terms of the BSD License.
+The Yii app console is free software. It is released under the terms of the BSD License.
 Please see [`LICENSE`](./LICENSE.md) for more information.
 
 Maintained by [Yii Software](https://www.yiiframework.com/).
