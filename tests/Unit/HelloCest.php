@@ -49,13 +49,35 @@ final class HelloCest
 
         $commandCreate = new CommandTester($command);
 
-        $commandCreate->setInputs(['yes']);
-
         $I->assertSame(ExitCode::OK, $commandCreate->execute([]));
 
         $output = $commandCreate->getDisplay(true);
 
         $I->assertStringContainsString('Hello!', $output);
+    }
+
+    public function testExecuteWithArgument(UnitTester $I): void
+    {
+        $app = new Application();
+
+        $params = $this->getConfig()->get('params');
+
+        $loader = new ContainerCommandLoader(
+            $this->container,
+            $params['yiisoft/yii-console']['commands']
+        );
+
+        $app->setCommandLoader($loader);
+
+        $command = $app->find('hello');
+
+        $commandCreate = new CommandTester($command);
+
+        $I->assertSame(ExitCode::OK, $commandCreate->execute(['sentence' => 'Foo!']));
+
+        $output = $commandCreate->getDisplay(true);
+
+        $I->assertStringContainsString('Foo!', $output);
     }
 
     private function getConfig(): Config
