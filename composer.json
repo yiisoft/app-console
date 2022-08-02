@@ -1,6 +1,6 @@
 {
     "name": "yiisoft/app-console",
-    "type": "library",
+    "type": "project",
     "description": "Template for console application",
     "keywords": [
         "yii",
