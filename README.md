@@ -10,7 +10,7 @@
 [![Total Downloads](https://poser.pugx.org/yiisoft/app-console/downloads.png)](https://packagist.org/packages/yiisoft/app-console)
 [![Build status](https://github.com/yiisoft/app-console/workflows/build/badge.svg)](https://github.com/yiisoft/app-console/actions?query=workflow%3Abuild)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiisoft/app-console/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiisoft/app-console/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/yiisoft/app-console/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yiisoft/pp-console/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/yiisoft/app-console/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/yiisoft/app-console/?branch=master)
 [![static analysis](https://github.com/yiisoft/app-console/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/app-console/actions?query=workflow%3A%22static+analysis%22)
 [![type-coverage](https://shepherd.dev/github/yiisoft/app-console/coverage.svg)](https://shepherd.dev/github/yiisoft/app-console)
 
