@@ -98,10 +98,12 @@ Hello!
 
 ### Unit testing
 
-The package is tested with [PHPUnit](https://phpunit.de/). To run tests:
+The template comes with ready to use [Codeception](https://codeception.com/) configuration.
+In order to execute tests run:
 
-```shell
-./vendor/bin/phpunit
+```
+composer run serve > ./runtime/yii.log 2>&1 &
+vendor/bin/codecept run
 ```
 
 ### Static analysis
