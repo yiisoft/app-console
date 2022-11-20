@@ -1,5 +1,5 @@
 actor: CliTester
-suite_namespace: App\Console\Tests\Cli
 modules:
-    # enable helpers as array
-    enabled: [Cli]
+  enabled:
+    - Cli
+  step_decorators: ~
