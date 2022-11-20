@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Console\Tests\Unit;
+namespace App\Tests\Unit;
 
-use App\Console\Tests\Support\UnitTester;
+use App\Tests\Support\UnitTester;
 use Psr\Container\ContainerInterface;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
