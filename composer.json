@@ -61,56 +61,7 @@
         "branch-alias": {
             "dev-master": "1.0.x-dev"
         },
-        "config-plugin-options": {
-            "source-directory": "config"
-        },
-        "config-plugin-environments": {
-            "dev": {
-                "params": [
-                    "test/params.php"
-                ]
-            },
-            "prod": {
-                "params": [
-                    "test/params.php"
-                ]
-            },
-            "test": {
-                "params": [
-                    "test/params.php"
-                ]
-            }
-        },
-        "config-plugin": {
-            "params": "params.php",
-            "bootstrap": "bootstrap.php",
-            "bootstrap-console": [
-                "$bootstrap",
-                "bootstrap-console.php"
-            ],
-            "common": [
-                "common/*.php"
-            ],
-            "console": [
-                "$common",
-                "console/*.php"
-            ],
-            "events": "events.php",
-            "events-console": [
-                "$events",
-                "events-console.php"
-            ],
-            "providers": "providers.php",
-            "providers-console": [
-                "$providers",
-                "providers-console.php"
-            ],
-            "delegates": "delegates.php",
-            "delegates-console": [
-                "$delegates",
-                "delegates-console.php"
-            ]
-        }
+        "config-plugin-file": "configuration.php"
     },
     "config": {
         "sort-packages": true,

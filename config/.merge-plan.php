@@ -29,9 +29,6 @@ return [
             'yiisoft/yii-event' => [
                 'config/common.php',
             ],
-            '/' => [
-                'common/*.php',
-            ],
         ],
         'events-console' => [
             'yiisoft/log' => [
@@ -46,7 +43,6 @@ return [
             ],
             '/' => [
                 '$events',
-                'events-console.php',
             ],
         ],
         'events-web' => [
@@ -65,79 +61,83 @@ return [
             'yiisoft/yii-event' => [
                 'config/console.php',
             ],
-            '/' => [
-                '$common',
-                'console/*.php',
-            ],
         ],
         'providers-console' => [
             'yiisoft/yii-console' => [
                 'config/providers-console.php',
-            ],
-            '/' => [
-                '$providers',
-                'providers-console.php',
             ],
         ],
         'events' => [
             'yiisoft/yii-event' => [
                 'config/events.php',
             ],
-            '/' => [
-                'events.php',
-            ],
+            '/' => [],
         ],
         'web' => [
             'yiisoft/yii-event' => [
                 'config/web.php',
             ],
         ],
-        'bootstrap' => [
+        'params-console' => [
             '/' => [
-                'bootstrap.php',
+                '$params',
             ],
+        ],
+        'di' => [
+            '/' => [
+                '$common',
+                'di/*.php',
+            ],
+        ],
+        'di-console' => [
+            '/' => [
+                '$di',
+                '$console',
+            ],
+        ],
+        'di-delegates' => [
+            '/' => [],
+        ],
+        'di-delegates-console' => [
+            '/' => [
+                '$di-delegates',
+            ],
+        ],
+        'di-providers' => [
+            '/' => [],
+        ],
+        'di-providers-console' => [
+            '/' => [
+                '$di-providers',
+            ],
+        ],
+        'bootstrap' => [
+            '/' => [],
         ],
         'bootstrap-console' => [
             '/' => [
                 '$bootstrap',
-                'bootstrap-console.php',
-            ],
-        ],
-        'providers' => [
-            '/' => [
-                'providers.php',
-            ],
-        ],
-        'delegates' => [
-            '/' => [
-                'delegates.php',
-            ],
-        ],
-        'delegates-console' => [
-            '/' => [
-                '$delegates',
-                'delegates-console.php',
             ],
         ],
     ],
     'dev' => [
         'params' => [
             '/' => [
-                'test/params.php',
+                'environments/dev/params.php',
             ],
         ],
     ],
     'prod' => [
         'params' => [
             '/' => [
-                'test/params.php',
+                'environments/prod/params.php',
             ],
         ],
     ],
     'test' => [
         'params' => [
             '/' => [
-                'test/params.php',
+                'environments/test/params.php',
             ],
         ],
     ],

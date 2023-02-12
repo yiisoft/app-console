@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use App\Command\HelloCommand;
-
 return [
     'yiisoft/aliases' => [
         'aliases' => [
@@ -13,8 +11,6 @@ return [
     ],
 
     'yiisoft/yii-console' => [
-        'commands' => [
-            HelloCommand::$defaultName => HelloCommand::class,
-        ],
+        'commands' => require __DIR__ . '/commands.php',
     ],
 ];
