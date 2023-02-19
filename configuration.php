@@ -6,14 +6,8 @@ return [
     'config-plugin' => [
         'params' => 'params.php',
         'params-console' => '$params',
-        'di' => [
-            '$common',
-            'di/*.php',
-        ],
-        'di-console' => [
-            '$di',
-            '$console',
-        ],
+        'di' => 'di/*.php',
+        'di-console' => '$di',
         'di-delegates' => [],
         'di-delegates-console' => '$di-delegates',
         'di-providers' => [],
