@@ -10,33 +10,29 @@ use Symfony\Component\Console\Application;
 use Symfony\Component\Console\CommandLoader\ContainerCommandLoader;
 use Symfony\Component\Console\Tester\CommandTester;
 use Yiisoft\Config\Config;
-use Yiisoft\Config\ConfigPaths;
-use Yiisoft\Di\Container;
-use Yiisoft\Di\ContainerConfig;
 use Yiisoft\Yii\Console\ExitCode;
-use Yiisoft\Yii\Runner\ConfigFactory;
-
-use function dirname;
+use Yiisoft\Yii\Runner\Console\ConsoleApplicationRunner;
 
 final class HelloCest
 {
+    private Config $config;
     private ContainerInterface $container;
 
     public function _before(UnitTester $I): void
     {
-        $config = $this->getConfig();
-        $containerConfig = ContainerConfig::create()
-            ->withDefinitions($config->get('console'))
-            ->withProviders($config->get('providers'));
-
-        $this->container = new Container($containerConfig);
+        $runner = new ConsoleApplicationRunner(
+            rootPath: dirname(__DIR__, 2),
+            environment: $_ENV['YII_ENV']
+        );
+        $this->config = $runner->getConfig();
+        $this->container = $runner->getContainer();
     }
 
     public function testExecute(UnitTester $I): void
     {
         $app = new Application();
 
-        $params = $this->getConfig()->get('params');
+        $params = $this->config->get('params');
 
         $loader = new ContainerCommandLoader(
             $this->container,
@@ -60,7 +56,7 @@ final class HelloCest
     {
         $app = new Application();
 
-        $params = $this->getConfig()->get('params');
+        $params = $this->config->get('params');
 
         $loader = new ContainerCommandLoader(
             $this->container,
@@ -78,10 +74,5 @@ final class HelloCest
         $output = $commandCreate->getDisplay(true);
 
         $I->assertStringContainsString('Foo!', $output);
-    }
-
-    private function getConfig(): Config
-    {
-        return ConfigFactory::create(new ConfigPaths(dirname(__DIR__, 2), 'config'), null);
     }
 }

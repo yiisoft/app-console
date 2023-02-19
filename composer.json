@@ -33,11 +33,11 @@
     "require": {
         "php": "^8.0",
         "vlucas/phpdotenv": "^5.3",
-        "yiisoft/aliases": "^2.0",
+        "yiisoft/aliases": "^3.0",
         "yiisoft/log": "^2.0",
-        "yiisoft/log-target-file": "^2.0",
-        "yiisoft/yii-console": "^1.3",
-        "yiisoft/yii-runner-console": "^1.1"
+        "yiisoft/log-target-file": "^3.0",
+        "yiisoft/yii-console": "^2.0",
+        "yiisoft/yii-runner-console": "^2.0"
     },
     "require-dev": {
         "codeception/codeception": "^5.0",
@@ -61,56 +61,7 @@
         "branch-alias": {
             "dev-master": "1.0.x-dev"
         },
-        "config-plugin-options": {
-            "source-directory": "config"
-        },
-        "config-plugin-environments": {
-            "dev": {
-                "params": [
-                    "test/params.php"
-                ]
-            },
-            "prod": {
-                "params": [
-                    "test/params.php"
-                ]
-            },
-            "test": {
-                "params": [
-                    "test/params.php"
-                ]
-            }
-        },
-        "config-plugin": {
-            "params": "params.php",
-            "bootstrap": "bootstrap.php",
-            "bootstrap-console": [
-                "$bootstrap",
-                "bootstrap-console.php"
-            ],
-            "common": [
-                "common/*.php"
-            ],
-            "console": [
-                "$common",
-                "console/*.php"
-            ],
-            "events": "events.php",
-            "events-console": [
-                "$events",
-                "events-console.php"
-            ],
-            "providers": "providers.php",
-            "providers-console": [
-                "$providers",
-                "providers-console.php"
-            ],
-            "delegates": "delegates.php",
-            "delegates-console": [
-                "$delegates",
-                "delegates-console.php"
-            ]
-        }
+        "config-plugin-file": "configuration.php"
     },
     "config": {
         "sort-packages": true,
