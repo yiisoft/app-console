@@ -44,7 +44,6 @@
         "codeception/module-asserts": "^3.0",
         "codeception/module-cli": "^2.0",
         "codeception/module-phpbrowser": "^3.0",
-        "spatie/phpunit-watcher": "^1.23",
         "vimeo/psalm": "^4.30|^5.7"
     },
     "autoload": {
