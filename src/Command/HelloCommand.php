@@ -34,7 +34,7 @@ final class HelloCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $output->writeln("You says: {$input->getArgument('sentence')}");
+        $output->writeln("You said: {$input->getArgument('sentence')}");
 
         return ExitCode::OK;
     }

@@ -69,7 +69,7 @@ final class Hello extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $output->writeln("You says: {$input->getArgument('sentence')}");
+        $output->writeln("You said: {$input->getArgument('sentence')}");
 
         return ExitCode::OK;
     }
@@ -104,10 +104,10 @@ Available commands:
 
 ```shell
 $ ./yii hello
-You says: Hello!
+You said: Hello!
 
 $ ./yii hello 'Code something'
-You says: Code something
+You said: Code something
 ```
 
 ## Testing
