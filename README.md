@@ -33,12 +33,6 @@ composer create-project --prefer-dist --stability=dev yiisoft/app-console <your 
 ### Create command console
 
 ```php
-<?php
-
-declare(strict_types=1);
-
-namespace App\Console;
-
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputDefinition;
