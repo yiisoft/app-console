@@ -106,29 +106,22 @@ You said: Code something
 
 ## Testing
 
-### Unit testing
-
 The template comes with ready to use [Codeception](https://codeception.com/) configuration.
 In order to execute tests run:
 
 ```shell
+composer run serve > ./runtime/yii.log 2>&1 &
 vendor/bin/codecept run
 ```
 
-### Static analysis
+## Documentation
 
-The code is statically analyzed with [Psalm](https://psalm.dev/). To run static analysis:
+- More information can be found in the [Internals.](docs/internals.md)
 
-```shell
-./vendor/bin/psalm
-```
+## Support
 
-## License
-
-The Yii app console is free software. It is released under the terms of the BSD License.
-Please see [`LICENSE`](./LICENSE.md) for more information.
-
-Maintained by [Yii Software](https://www.yiiframework.com/).
+If you need help or have a question, the [Yii Forum](https://forum.yiiframework.com/c/yii-3-0/63) is a good place for that.
+You may also check out other [Yii Community Resources](https://www.yiiframework.com/community).
 
 ## Support the project
 
@@ -141,3 +134,10 @@ Maintained by [Yii Software](https://www.yiiframework.com/).
 [![Telegram](https://img.shields.io/badge/telegram-join-1DA1F2?style=flat&logo=telegram)](https://t.me/yii3en)
 [![Facebook](https://img.shields.io/badge/facebook-join-1DA1F2?style=flat&logo=facebook&logoColor=ffffff)](https://www.facebook.com/groups/yiitalk)
 [![Slack](https://img.shields.io/badge/slack-join-1DA1F2?style=flat&logo=slack)](https://yiiframework.com/go/slack)
+
+## License
+
+The Yii Access is free software. It is released under the terms of the BSD License.
+Please see [`LICENSE`](./LICENSE.md) for more information.
+
+Maintained by [Yii Software](https://www.yiiframework.com/).
