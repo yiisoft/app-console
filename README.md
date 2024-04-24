@@ -104,16 +104,6 @@ $ ./yii hello 'Code something'
 You said: Code something
 ```
 
-## Testing
-
-The template comes with ready to use [Codeception](https://codeception.com/) configuration.
-In order to execute tests run:
-
-```shell
-composer run serve > ./runtime/yii.log 2>&1 &
-vendor/bin/codecept run
-```
-
 ## Documentation
 
 - [Internals](docs/internals.md)
