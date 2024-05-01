@@ -1,5 +1,7 @@
 # Internals
 
+## Tests
+
 The template comes with ready to use [Codeception](https://codeception.com/) configuration.
 In order to execute tests run:
 
