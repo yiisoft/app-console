@@ -25,7 +25,7 @@ The package is a console application that can be used to perform common tasks in
 The package could be installed with [composer](https://getcomposer.org/download/)
 
 ```shell
-composer create-project --prefer-dist --stability=dev yiisoft/app-console <your project>
+composer create-project --stability=dev yiisoft/app-console <your project>
 ```
 
 ## General usage
