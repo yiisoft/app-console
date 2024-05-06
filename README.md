@@ -22,7 +22,7 @@ The package is a console application that can be used to perform common tasks in
 
 ## Installation
 
-The package could be installed with composer:
+The package could be installed with [Composer](https://getcomposer.org):
 
 ```shell
 composer create-project --prefer-dist --stability=dev yiisoft/app-console <your project>
