@@ -22,10 +22,10 @@ The package is a console application that can be used to perform common tasks in
 
 ## Installation
 
-The package could be installed with [Composer](https://getcomposer.org):
+The package could be installed with [Composer](https://getcomposer.org/)
 
 ```shell
-composer create-project --prefer-dist --stability=dev yiisoft/app-console <your project>
+composer create-project --stability=dev yiisoft/app-console <your project>
 ```
 
 ## General usage
