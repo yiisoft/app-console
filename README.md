@@ -1,6 +1,6 @@
 <p align="center">
     <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://yiisoft.github.io/docs/images/yii_logo.svg" height="100px">
+        <img src="https://yiisoft.github.io/docs/images/yii_logo.svg" height="100px" alt="Yii">
     </a>
     <h1 align="center">Yii Console Application</h1>
     <br>
@@ -89,11 +89,15 @@ Options:
   -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
 
 Available commands:
-  completion  Dump the shell completion script
-  hello       An example command
-  help        Display help for a command
-  list        List commands
-  serve       Runs PHP built-in web server
+  completion       Dump the shell completion script
+  hello            An example command
+  help             Display help for a command
+  list             List commands
+  serve            Runs PHP built-in web server
+ debug
+  debug:container  Show information about container
+  debug:events     Show information about events and listeners
+  debug:reset      Clear debug data
 ```
 
 ```shell
