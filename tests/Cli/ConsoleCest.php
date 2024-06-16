@@ -18,7 +18,7 @@ final class ConsoleCest
     public function testCommandHello(CliTester $I): void
     {
         $command = dirname(__DIR__, 2) . '/yii';
-        $I->runShellCommand($command . ' hello');
+        $I->runShellCommand($command . ' echo');
         $I->seeInShellOutput('Hello!');
     }
 }

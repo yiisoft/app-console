@@ -25,14 +25,96 @@ The package is a console application that can be used to perform common tasks in
 The package could be installed with [Composer](https://getcomposer.org):
 
 ```shell
-composer create-project --stability=dev yiisoft/app-console <your project>
+composer create-project yiisoft/app-console <your project>
 ```
 
 ## General usage
 
-### Create command console
+Console is available as `./yii` from the root directory of the application:
+
+```shell
+$ ./yii
+
+Yii Console 1.0
+
+Usage:
+  command [options] [arguments]
+
+Options:
+  -h, --help            Display help for the given command. When no command is given display help for the list command
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi|--no-ansi  Force (or disable --no-ansi) ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --config=CONFIG   Set alternative configuration name
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+
+Available commands:
+  completion  Dump the shell completion script
+  echo        An example command that echoes exactly what it is told to.
+  help        Display help for a command
+  list        List commands
+  serve       Runs PHP built-in web server
+```
+
+Help for specific command could be displayed by adding `--help` to the command itself:
+
+```shell
+$ ./yii echo --help
+
+Description:
+  An example command that echoes exactly what it is told to.
+
+Usage:
+  echo [<sentence>]
+
+Arguments:
+  sentence              Sentence to say. [default: "Hello!"]
+
+Options:
+  -h, --help            Display help for the given command. When no command is given display help for the list command
+  -q, --quiet           Do not output any message
+  -V, --version         Display this application version
+      --ansi|--no-ansi  Force (or disable --no-ansi) ANSI output
+  -n, --no-interaction  Do not ask any interactive question
+      --config=CONFIG   Set alternative configuration name
+  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+```
+
+Using the command is like the following: 
+
+```shell
+$ ./yii echo
+You said: Hello!
+
+$ ./yii echo 'Code something'
+You said: Code something
+```
+
+## Environments
+
+Out of the box, three environments are available:
+
+- dev — for development.
+- prod — for production.
+- test — for running tests.
+
+Config files for these are in `config/environments`.
+
+Environment could be chosen by setting `YII_ENV`:
+
+```shell
+YII_ENV=prod ./yii
+```
+
+## Creating your own command
+
+Commands are placed into `src/Command`. Let's see how `hello` command is implemented in `src/Command/HelloCommand.php`:
 
 ```php
+namespace App\Command;
+
+use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputDefinition;
@@ -40,17 +122,13 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Yiisoft\Yii\Console\ExitCode;
 
-final class Hello extends Command
+#[AsCommand(
+    name: 'echo',
+    description: 'An example command that echoes exactly what it is told to.'
+)]
+final class EchoCommand extends Command
 {
-    protected static $defaultName = 'hello';
-    protected static $defaultDescription = 'An example command';
-
     private string $sentence = 'sentence';
-
-    public function __construct()
-    {
-        parent::__construct();
-    }
 
     protected function configure(): void
     {
@@ -70,50 +148,36 @@ final class Hello extends Command
 }
 ```
 
-### Using command console
+To register the command, add it to `config/commands.php`:
 
-```shell
-$ ./yii
-Yii Console 1.0
+```php
+use App\Command\EchoCommand;
 
-Usage:
-  command [options] [arguments]
-
-Options:
-  -h, --help            Display help for the given command. When no command is given display help for the list command
-  -q, --quiet           Do not output any message
-  -V, --version         Display this application version
-      --ansi|--no-ansi  Force (or disable --no-ansi) ANSI output
-  -n, --no-interaction  Do not ask any interactive question
-      --config=CONFIG   Set alternative configuration name
-  -v|vv|vvv, --verbose  Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
-
-Available commands:
-  completion       Dump the shell completion script
-  hello            An example command
-  help             Display help for a command
-  list             List commands
-  serve            Runs PHP built-in web server
- debug
-  debug:container  Show information about container
-  debug:events     Show information about events and listeners
-  debug:reset      Clear debug data
+return [
+    'echo' => EchoCommand::class,
+];
 ```
 
-```shell
-$ ./yii hello
-You said: Hello!
+> Info: Yii console is based on Symfony console so for additional usage documentation, please follow [Symfony console
+> guide](https://symfony.com/doc/current/console.html).
 
-$ ./yii hello 'Code something'
-You said: Code something
+## Tests
+
+The template comes with ready to use [Codeception](https://codeception.com/) configuration.
+In order to execute tests run:
+
+```shell
+composer run serve > ./runtime/yii.log 2>&1 &
+vendor/bin/codecept run
 ```
 
-## Documentation
+## Static analysis
 
-- [Internals](docs/internals.md)
+The code is statically analyzed with [Psalm](https://psalm.dev/). To run static analysis:
 
-If you need help or have a question, the [Yii Forum](https://forum.yiiframework.com/c/yii-3-0/63) is a good place for that.
-You may also check out other [Yii Community Resources](https://www.yiiframework.com/community).
+```shell
+./vendor/bin/psalm
+```
 
 ## License
 

@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Command\HelloCommand;
+use App\Command\EchoCommand;
 
 return [
-    HelloCommand::$defaultName => HelloCommand::class,
+    'echo' => EchoCommand::class,
 ];

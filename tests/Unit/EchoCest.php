@@ -13,7 +13,7 @@ use Yiisoft\Config\Config;
 use Yiisoft\Yii\Console\ExitCode;
 use Yiisoft\Yii\Runner\Console\ConsoleApplicationRunner;
 
-final class HelloCest
+final class EchoCest
 {
     private Config $config;
     private ContainerInterface $container;
@@ -41,7 +41,7 @@ final class HelloCest
 
         $app->setCommandLoader($loader);
 
-        $command = $app->find('hello');
+        $command = $app->find('echo');
 
         $commandCreate = new CommandTester($command);
 
@@ -65,7 +65,7 @@ final class HelloCest
 
         $app->setCommandLoader($loader);
 
-        $command = $app->find('hello');
+        $command = $app->find('echo');
 
         $commandCreate = new CommandTester($command);
 
