@@ -24,7 +24,6 @@
 # Ignore some meta files when creating an archive of this repository
 /.github                export-ignore
 /.gitattributes         export-ignore
-/.scrutinizer.yml       export-ignore
 /.styleci.yml           export-ignore
 /CHANGELOG.md           export-ignore
 
