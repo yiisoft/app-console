@@ -20,5 +20,4 @@ coverage:
     include:
       - src/*
 params:
-  - .env
   - .env.test

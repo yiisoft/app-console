@@ -12,11 +12,15 @@
 [![static analysis](https://github.com/yiisoft/app-console/workflows/static%20analysis/badge.svg)](https://github.com/yiisoft/app-console/actions?query=workflow%3A%22static+analysis%22)
 [![type-coverage](https://shepherd.dev/github/yiisoft/app-console/coverage.svg)](https://shepherd.dev/github/yiisoft/app-console)
 
-The package is a **console only** application that can be used to perform common tasks in a Yii application.
+The package is a **console only** application template that can be used to perform common tasks in a Yii application.
 If you need classic web or API please start with corresponding templates:
 
 - [Classic web application template](https://github.com/yiisoft/app)
 - [API application template](https://github.com/yiisoft/app-api) 
+
+It is based on [Yii console runner](https://github.com/yiisoft/yii-runner-console) that is used in the entry
+command script, `./yii`. You are free to adjust any part of this template including the entry command script
+to suit your needs.
 
 ## Requirements
 
@@ -109,6 +113,14 @@ Environment could be chosen by setting `YII_ENV`:
 YII_ENV=prod ./yii
 ```
 
+## Extra debugging
+
+To enable validation of container and events, set `YII_DEBUG` environment variable:
+
+```shell
+YII_DEBUG=1 ./yii
+```
+
 ## Creating your own command
 
 Commands are placed into `src/Command`. Let's see how `hello` command is implemented in `src/Command/HelloCommand.php`:
@@ -160,8 +172,13 @@ return [
 ];
 ```
 
-> Info: Yii console is based on Symfony console so for additional usage documentation, please follow [Symfony console
-> guide](https://symfony.com/doc/current/console.html).
+> Info: Yii console is based on Symfony console so for additional usage documentation, please follow
+> [Yii console](https://github.com/yiisoft/yii-console) and
+> [Symfony console guide](https://symfony.com/doc/current/console.html).
+
+## Events
+
+The application raises `ApplicationStartup` before and `ApplicationShutdown` after running a command.
 
 ## Tests
 

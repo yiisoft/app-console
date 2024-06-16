@@ -10,8 +10,8 @@ require_once __DIR__ . '/autoload.php';
 // Run console application runner
 $runner = new ConsoleApplicationRunner(
     rootPath: __DIR__,
-    debug: $_ENV['YII_DEBUG'],
-    checkEvents: $_ENV['YII_DEBUG'],
+    debug: (bool)$_ENV['YII_DEBUG'],
+    checkEvents: (bool)$_ENV['YII_DEBUG'],
     environment: $_ENV['YII_ENV']
 );
 $runner->run();
