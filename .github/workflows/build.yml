@@ -5,7 +5,6 @@ on:
       - 'README.md'
       - 'CHANGELOG.md'
       - '.gitignore'
-      - '.env.example'
       - '.gitattributes'
       - 'infection.json.dist'
       - 'psalm.xml'
@@ -16,9 +15,7 @@ on:
       - 'README.md'
       - 'CHANGELOG.md'
       - '.gitignore'
-      - '.env.example'
       - '.gitattributes'
-      - 'infection.json.dist'
       - 'psalm.xml'
 
   schedule:
