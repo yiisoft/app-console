@@ -17,7 +17,8 @@ Thumbs.db
 
 # composer vendor dir
 /vendor
-# composer lock file
+
+# REMOVE THIS LINE!
+# composer.lock file is used to lock the dependencies of your project to a known state
+# and should be keeped in the repository.
 /composer.lock
-# composer itself is not needed
-composer.phar

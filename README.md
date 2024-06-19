@@ -34,6 +34,8 @@ The package could be installed with [Composer](https://getcomposer.org):
 composer create-project yiisoft/app-console <your project>
 ```
 
+Remove line "/composer.lock" from `/.gitignore` file to keep `composer.lock` into your repository.
+
 ## General usage
 
 Console is available as `./yii` from the root directory of the application:
