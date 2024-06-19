@@ -17,14 +17,8 @@ Thumbs.db
 
 # composer vendor dir
 /vendor
-# composer lock file
-/composer.lock
-# composer itself is not needed
-composer.phar
 
-# phpunit itself is not needed
-phpunit.phar
-# local phpunit config
-/phpunit.xml
-# phpunit cache
-.phpunit.result.cache
+# REMOVE THIS LINE!
+# composer.lock file is used to lock the dependencies of your project to a known state
+# and should be keeped in the repository.
+/composer.lock
