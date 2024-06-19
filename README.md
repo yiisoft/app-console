@@ -26,9 +26,9 @@ to suit your needs.
 
 - PHP 8.1 or higher.
 
-## Installation
+## Creating project
 
-The package could be installed with [Composer](https://getcomposer.org):
+Use [Composer](https://getcomposer.org) to create new project from this template:
 
 ```shell
 composer create-project yiisoft/app-console <your project>
