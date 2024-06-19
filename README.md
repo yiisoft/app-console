@@ -26,7 +26,7 @@ to suit your needs.
 
 - PHP 8.1 or higher.
 
-## Creating project
+## Creating a project
 
 Use [Composer](https://getcomposer.org) to create new project from this template:
 
@@ -34,7 +34,7 @@ Use [Composer](https://getcomposer.org) to create new project from this template
 composer create-project yiisoft/app-console <your project>
 ```
 
-Remove line "/composer.lock" from `/.gitignore` file to keep `composer.lock` into your repository.
+Remove line "/composer.lock" from `/.gitignore` file to keep `composer.lock` in your repository.
 
 ## General usage
 
