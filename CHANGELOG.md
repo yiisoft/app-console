@@ -2,7 +2,7 @@
 
 ## 1.0.1 under development
 
-- no changes in this release.
+- Enh #37: Remove `composer.lock` from `.gitignore` (@vjik) 
 
 ## 1.0.0 June 19, 2024
 
