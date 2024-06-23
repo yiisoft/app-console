@@ -1,0 +1,27 @@
+on:
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+      - 'CHANGELOG.md'
+      - '.gitignore'
+      - '.gitattributes'
+      - 'psalm.xml'
+  push:
+    branches: ['master']
+    paths-ignore:
+      - 'README.md'
+      - 'CHANGELOG.md'
+      - '.gitignore'
+      - '.gitattributes'
+      - 'psalm.xml'
+
+name: backwards compatibility
+
+jobs:
+  roave_bc_check:
+    uses: yiisoft/actions/.github/workflows/bc.yml@master
+    with:
+      os: >-
+        ['ubuntu-latest']
+      php: >-
+        ['8.1']
