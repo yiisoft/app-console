@@ -34,8 +34,6 @@ Use [Composer](https://getcomposer.org) to create new project from this template
 composer create-project yiisoft/app-console <your project>
 ```
 
-Remove line "/composer.lock" from `/.gitignore` file to keep `composer.lock` in your repository.
-
 ## General usage
 
 Console is available as `./yii` from the root directory of the application:
