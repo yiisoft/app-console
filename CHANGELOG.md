@@ -2,7 +2,10 @@
 
 ## 1.0.2 under development
 
-- no changes in this release.
+- Enh #42: Add `"bump-after-update": true` option to `composer.json` (@vjik)
+- Enh #42: Update composer dependencies (@vjik)
+- Enh #42: Add PHP 8.4 and 8.5 support (@vjik)
+- Enh #42: Disable `ensureOverrideAttribute` option in psalm configuration (@vjik)
 
 ## 1.0.1 June 23, 2024
 
