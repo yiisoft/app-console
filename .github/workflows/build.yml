@@ -45,6 +45,8 @@ jobs:
           - 8.1
           - 8.2
           - 8.3
+          - 8.4
+          - 8.5
 
     steps:
       - name: Checkout
@@ -55,7 +57,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           extensions: ${{ env.extensions }}
-          ini-values: date.timezone='UTC'
+          ini-values: date.timezone='UTC', register_argc_argv=On
           tools: composer:v2
 
       - name: Determine composer cache directory on Linux

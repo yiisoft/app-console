@@ -24,7 +24,7 @@ to suit your needs.
 
 ## Requirements
 
-- PHP 8.1 or higher.
+- PHP 8.1 - 8.5.
 
 ## Creating a project
 
