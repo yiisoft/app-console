@@ -1,5 +1,9 @@
 # Yii Console Application Change Log
 
+## 1.0.3 under development
+
+- no changes in this release.
+
 ## 1.0.2 December 23, 2025
 
 - Enh #42: Add `"bump-after-update": true` option to `composer.json` (@vjik)
