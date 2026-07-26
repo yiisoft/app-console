@@ -1,0 +1,28 @@
+<?php
+
+declare(strict_types=1);
+
+use Rector\CodeQuality\Rector\Class_\InlineConstructorDefaultToPropertyRector;
+use Rector\Config\RectorConfig;
+use Rector\Php74\Rector\Closure\ClosureToArrowFunctionRector;
+use Rector\Php81\Rector\Property\ReadOnlyPropertyRector;
+use Rector\Php81\Rector\FuncCall\NullToStrictStringFuncCallArgRector;
+
+return RectorConfig::configure()
+    ->withPaths([
+        __DIR__ . '/src',
+        __DIR__ . '/tests',
+        __DIR__ . '/config',
+        __DIR__ . '/autoload.php',
+        __DIR__ . '/configuration.php',
+        __DIR__ . '/yii',
+    ])
+    ->withPhpSets(php81: true)
+    ->withRules([
+        InlineConstructorDefaultToPropertyRector::class,
+    ])
+    ->withSkip([
+        ClosureToArrowFunctionRector::class,
+        ReadOnlyPropertyRector::class,
+        NullToStrictStringFuncCallArgRector::class,
+    ]);
