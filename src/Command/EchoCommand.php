@@ -14,7 +14,7 @@ use Yiisoft\Yii\Console\ExitCode;
 
 #[AsCommand(
     name: 'echo',
-    description: 'An example command that echoes exactly what it is told to.'
+    description: 'An example command that echoes exactly what it is told to.',
 )]
 final class EchoCommand extends Command
 {
@@ -25,7 +25,7 @@ final class EchoCommand extends Command
         $this->setDefinition(
             new InputDefinition([
                 new InputArgument($this->sentence, InputArgument::OPTIONAL, 'Sentence to say.', 'Hello!'),
-            ])
+            ]),
         );
     }
 

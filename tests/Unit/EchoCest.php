@@ -13,6 +13,8 @@ use Yiisoft\Config\Config;
 use Yiisoft\Yii\Console\ExitCode;
 use Yiisoft\Yii\Runner\Console\ConsoleApplicationRunner;
 
+use function dirname;
+
 final class EchoCest
 {
     private Config $config;
@@ -22,7 +24,7 @@ final class EchoCest
     {
         $runner = new ConsoleApplicationRunner(
             rootPath: dirname(__DIR__, 2),
-            environment: $_ENV['YII_ENV']
+            environment: $_ENV['YII_ENV'],
         );
         $this->config = $runner->getConfig();
         $this->container = $runner->getContainer();
@@ -36,7 +38,7 @@ final class EchoCest
 
         $loader = new ContainerCommandLoader(
             $this->container,
-            $params['yiisoft/yii-console']['commands']
+            $params['yiisoft/yii-console']['commands'],
         );
 
         $app->setCommandLoader($loader);
@@ -60,7 +62,7 @@ final class EchoCest
 
         $loader = new ContainerCommandLoader(
             $this->container,
-            $params['yiisoft/yii-console']['commands']
+            $params['yiisoft/yii-console']['commands'],
         );
 
         $app->setCommandLoader($loader);

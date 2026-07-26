@@ -2,7 +2,7 @@
 
 ## 1.0.3 under development
 
-- no changes in this release.
+- Enh #52: Replace StyleCI with PHP CS Fixer and Rector (@vjik)
 
 ## 1.0.2 December 23, 2025
 
