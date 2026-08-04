@@ -8,6 +8,7 @@ on:
       - 'autoload.php'
       - 'configuration.php'
       - 'yii'
+      - 'yii.bat'
 
 permissions:
   contents: read
