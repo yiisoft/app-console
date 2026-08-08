@@ -2,7 +2,9 @@
 
 ## 1.0.3 under development
 
+- New #57: Add Composer Dependency Analyser (@vjik)
 - Enh #52: Replace StyleCI with PHP CS Fixer and Rector (@vjik)
+- Enh #57: Explicitly require `psr/log`, `symfony/console` and `yiisoft/definitions` packages (@vjik)
 
 ## 1.0.2 December 23, 2025
 

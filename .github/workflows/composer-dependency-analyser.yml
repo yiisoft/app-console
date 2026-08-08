@@ -9,6 +9,7 @@ on:
       - '.github/workflows/composer-dependency-analyser.yml'
       - 'composer.json'
       - 'composer-dependency-analyser.php'
+      - 'yii'
   push:
     branches: ['master']
     paths: *paths
