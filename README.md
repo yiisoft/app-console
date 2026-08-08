@@ -198,6 +198,15 @@ The code is statically analyzed with [Psalm](https://psalm.dev/). To run static 
 ./vendor/bin/psalm
 ```
 
+## Dependencies
+
+Use [Composer Dependency Analyser](https://github.com/shipmonk-rnd/composer-dependency-analyser) to detect unknown,
+shadow, and unused [Composer](https://getcomposer.org) dependencies:
+
+```shell
+./vendor/bin/composer-dependency-analyser
+```
+
 ## License
 
 The Yii Console Application is free software. It is released under the terms of the BSD License.

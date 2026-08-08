@@ -2,7 +2,10 @@
 
 ## 1.0.3 under development
 
+- New #57: Add Composer Dependency Analyser (@vjik)
 - Enh #52: Replace StyleCI with PHP CS Fixer and Rector (@vjik)
+- Enh #57: Explicitly require transitive and shadow dependencies in `composer.json` (@vjik)
+- Enh #57: Remove unused dependencies from `composer.json` (@vjik)
 
 ## 1.0.2 December 23, 2025
 
