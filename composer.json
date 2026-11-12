@@ -43,15 +43,15 @@
         "yiisoft/yii-runner-console": "^2.2.1"
     },
     "require-dev": {
-        "codeception/codeception": "^5.2.2",
-        "codeception/module-asserts": "^3.1",
+        "codeception/codeception": "^5.3.7",
+        "codeception/module-asserts": "^3.3",
         "codeception/module-cli": "^2.0.1",
-        "codeception/module-phpbrowser": "^3.0.2",
-        "friendsofphp/php-cs-fixer": "^3.95.27",
-        "rector/rector": "^2.7.0",
+        "codeception/module-phpbrowser": "^4.1.0",
+        "friendsofphp/php-cs-fixer": "^3.95.28",
+        "rector/rector": "^2.8.4",
         "shipmonk/composer-dependency-analyser": "^1.8.4",
-        "vimeo/psalm": "^5.26.1 || ^6.16.1",
-        "vlucas/phpdotenv": "^5.7",
+        "vimeo/psalm": "^7.0.4",
+        "vlucas/phpdotenv": "^5.8",
         "yiisoft/code-style": "^1.1"
     },
     "autoload": {
