@@ -35,7 +35,7 @@
         "symfony/console": "^6.4.43 || ^7.4 || ^8.1",
         "yiisoft/aliases": "^3.1",
         "yiisoft/config": "^1.6.2",
-        "yiisoft/definitions": "^3.4.1",
+        "yiisoft/definitions": "^3.4.2",
         "yiisoft/di": "^1.4.1",
         "yiisoft/log": "^2.2.1",
         "yiisoft/log-target-file": "^3.1",
